@@ -4,6 +4,9 @@
 extern "C" __int64 _testmain();
 //extern "C" __int64 double _metros2centimetros(double meters);
 extern "C" __int64 int _metros2centimetros(int meters);
+extern "C" __int64 int _metros2milimetros(int meters);
+extern "C" __int64 int _metros2kilometros(int meters);
+
 
 
 Widget::Widget(QWidget *parent)
@@ -29,7 +32,8 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->clear();
     }
 
-    if (arg1 == "Distancia") {
+    if (arg1 == "Distancia")
+    {
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Milímetros");
         ui->cbx_unidad1->addItem("Centímetros");
@@ -49,20 +53,11 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Pies");
         ui->cbx_unidad2->addItem("Yardas");
         ui->cbx_unidad2->addItem("Millas");
-
-        // Llamando a ensamblador
-        int metersValue = ui->valor_unidad1->value();
-        int centimetersValue;
-
-        asm volatile (
-            "call _metros2centimetros"
-            : "=D" (centimetersValue)
-            : "D" (metersValue)
-            : "rax", "rcx"
-            );
-        ui->conversion_lbl->setText(QString::number(centimetersValue) + "cm");
-
     }
+
+
+
+
     else if (arg1 == "Volumen") {
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Mililitros");
@@ -158,6 +153,83 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
 
 void Widget::on_consultar_btn_clicked()
 {
-    ui->conversion_lbl->setText(QString::number(_testmain()));
+
+
+
+
+
 }
+
+
+void Widget::on_valor_unidad1_valueChanged(double arg1)
+{
+    int unidad1 = ui->valor_unidad1->value();
+    int resultado = 0.0;
+    QString unidad1_text = ui->cbx_unidad1->currentText();
+    QString unidad2_text = ui->cbx_unidad2->currentText();
+
+
+    if (unidad1_text == "Metros" && unidad2_text == "Centímetros")
+    {
+        asm volatile (
+            "call _metros2centimetros"
+            : "=D" (resultado)
+            : "D" (unidad1)
+            : "rax", "rcx"
+            );
+        ui->conversion_lbl->setText(QString::number(resultado) + "cm");
+        resultado = 0.0;
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Milímetros")
+    {
+        asm volatile (
+            "call _metros2milimetros"
+            : "=D" (resultado)
+            : "D" (unidad1)
+            : "rax", "rcx"
+            );
+        ui->conversion_lbl->setText(QString::number(resultado) + "mm");
+        resultado = 0.0;
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Metros")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1) + "m");
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Kilómetros")
+    {
+        asm volatile (
+            "call _metros2kilometros"
+            : "=D" (resultado)
+            : "D" (unidad1)
+            : "rax", "rcx"
+            );
+        ui->conversion_lbl->setText(QString::number(resultado) + "km");
+        resultado = 0.0;
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Pulgadas")
+    {
+
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Pies")
+    {
+
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Yardas")
+    {
+
+    }
+
+    else if (unidad1_text == "Metros" && unidad2_text == "Millas")
+    {
+
+    }
+}
+
+
 
