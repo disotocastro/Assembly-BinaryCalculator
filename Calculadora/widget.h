@@ -19,6 +19,8 @@ public:
 private slots:
     void on_cbx_categoria_currentTextChanged(const QString &arg1);
 
+    void on_boton_consultar_clicked();
+
 private:
     Ui::Widget *ui;
 };
