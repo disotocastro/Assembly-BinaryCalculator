@@ -42,16 +42,22 @@ static constexpr auto qt_meta_stringdata_CLASSWidgetENDCLASS = QtMocHelpers::str
     "on_cbx_categoria_currentTextChanged",
     "",
     "arg1",
-    "on_boton_consultar_clicked"
+    "on_label_2_linkActivated",
+    "link",
+    "on_consultar_btn_clicked",
+    "on_cbx_categoria_editTextChanged"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSWidgetENDCLASS_t {
-    uint offsetsAndSizes[10];
+    uint offsetsAndSizes[16];
     char stringdata0[7];
     char stringdata1[36];
     char stringdata2[1];
     char stringdata3[5];
-    char stringdata4[27];
+    char stringdata4[25];
+    char stringdata5[5];
+    char stringdata6[25];
+    char stringdata7[33];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSWidgetENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -61,13 +67,19 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSWidgetENDCLASS_t qt_meta_string
         QT_MOC_LITERAL(7, 35),  // "on_cbx_categoria_currentTextC..."
         QT_MOC_LITERAL(43, 0),  // ""
         QT_MOC_LITERAL(44, 4),  // "arg1"
-        QT_MOC_LITERAL(49, 26)   // "on_boton_consultar_clicked"
+        QT_MOC_LITERAL(49, 24),  // "on_label_2_linkActivated"
+        QT_MOC_LITERAL(74, 4),  // "link"
+        QT_MOC_LITERAL(79, 24),  // "on_consultar_btn_clicked"
+        QT_MOC_LITERAL(104, 32)   // "on_cbx_categoria_editTextChanged"
     },
     "Widget",
     "on_cbx_categoria_currentTextChanged",
     "",
     "arg1",
-    "on_boton_consultar_clicked"
+    "on_label_2_linkActivated",
+    "link",
+    "on_consultar_btn_clicked",
+    "on_cbx_categoria_editTextChanged"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -79,7 +91,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSWidgetENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,12 +99,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSWidgetENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   26,    2, 0x08,    1 /* Private */,
-       4,    0,   29,    2, 0x08,    3 /* Private */,
+       1,    1,   38,    2, 0x08,    1 /* Private */,
+       4,    1,   41,    2, 0x08,    3 /* Private */,
+       6,    0,   44,    2, 0x08,    5 /* Private */,
+       7,    1,   45,    2, 0x08,    6 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    3,
 
        0        // eod
 };
@@ -109,8 +125,14 @@ Q_CONSTINIT const QMetaObject Widget::staticMetaObject = { {
         // method 'on_cbx_categoria_currentTextChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        // method 'on_boton_consultar_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        // method 'on_label_2_linkActivated'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        // method 'on_consultar_btn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_cbx_categoria_editTextChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
     >,
     nullptr
 } };
@@ -122,7 +144,9 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         (void)_t;
         switch (_id) {
         case 0: _t->on_cbx_categoria_currentTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: _t->on_boton_consultar_clicked(); break;
+//        case 1: _t->on_label_2_linkActivated((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->on_consultar_btn_clicked(); break;
+//        case 3: _t->on_cbx_categoria_editTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -147,13 +171,13 @@ int Widget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }

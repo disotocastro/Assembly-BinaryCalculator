@@ -1,13 +1,15 @@
 #include "widget.h"
 #include "ui_widget.h"
 
+extern "C" __int64 _testmain();
+
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
     setWindowTitle("Calculadora de unidades");
-    ui->resultado->setText(" ");
+    ui->conversion_lbl->setText(" ");
 }
 
 Widget::~Widget()
@@ -15,8 +17,15 @@ Widget::~Widget()
     delete ui;
 }
 
+// Categorias
 void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
 {
+    // Hacer que seleccionar categoría siempre esté en blanco
+    if (arg1 == "Seleccionar Categoría") {
+        ui->cbx_unidad1->clear();
+        ui->cbx_unidad2->clear();
+    }
+
     if (arg1 == "Distancia") {
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Milímetros");
@@ -132,9 +141,8 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
     }
 }
 
-
-void Widget::on_boton_consultar_clicked()
+void Widget::on_consultar_btn_clicked()
 {
-
+    ui->conversion_lbl->setText(QString::number(_testmain()));
 }
 

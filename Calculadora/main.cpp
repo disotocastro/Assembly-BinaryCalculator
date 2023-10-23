@@ -26,8 +26,7 @@ int main(int argc, char *argv[])
     Widget w;
     w.show();
 
-
-
+    return a.exec();
 /*
     double resultado=0;
     string unidad1="";
@@ -65,5 +64,4 @@ int main(int argc, char *argv[])
      }
 
 */
-    return a.exec();
 }

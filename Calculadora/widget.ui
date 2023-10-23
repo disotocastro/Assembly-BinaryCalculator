@@ -13,11 +13,11 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <widget class="QPushButton" name="boton_consultar">
+  <widget class="QPushButton" name="consultar_btn">
    <property name="geometry">
     <rect>
      <x>120</x>
-     <y>200</y>
+     <y>220</y>
      <width>75</width>
      <height>24</height>
     </rect>
@@ -29,9 +29,9 @@
   <widget class="QComboBox" name="cbx_categoria">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>80</y>
-     <width>181</width>
+     <x>50</x>
+     <y>70</y>
+     <width>231</width>
      <height>22</height>
     </rect>
    </property>
@@ -54,8 +54,13 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="currentText">
-    <string>Distancia</string>
+    <string>Seleccionar Categoría</string>
    </property>
+   <item>
+    <property name="text">
+     <string>Seleccionar Categoría</string>
+    </property>
+   </item>
    <item>
     <property name="text">
      <string>Distancia</string>
@@ -92,12 +97,12 @@
     </property>
    </item>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="titlo_lbl">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>60</x>
      <y>10</y>
-     <width>291</width>
+     <width>211</width>
      <height>51</height>
     </rect>
    </property>
@@ -121,39 +126,49 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>260</y>
-     <width>102</width>
-     <height>18</height>
+     <y>280</y>
+     <width>155</width>
+     <height>24</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="resultado_lbl">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Resultado</string>
+       <string>Resultado =</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="resultado">
+     <widget class="QLabel" name="conversion_lbl">
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>xxxxxxx</string>
+       <string>TextLabel</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>57</x>
-     <y>121</y>
-     <width>187</width>
-     <height>52</height>
+     <x>50</x>
+     <y>120</y>
+     <width>233</width>
+     <height>61</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -187,11 +202,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </item>
     <item row="1" column="0">
      <widget class="QDoubleSpinBox" name="valor_unidad2">
+      <property name="wrapping">
+       <bool>false</bool>
+      </property>
       <property name="buttonSymbols">
        <enum>QAbstractSpinBox::NoButtons</enum>
-      </property>
-      <property name="showGroupSeparator" stdset="0">
-       <bool>false</bool>
       </property>
       <property name="decimals">
        <number>5</number>
@@ -200,7 +215,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <double>-9999999999.000000000000000</double>
       </property>
       <property name="maximum">
-       <double>9999999999.000000000000000</double>
+       <double>999999999999.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>1.000000000000000</double>
+      </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::DefaultStepType</enum>
       </property>
      </widget>
     </item>
