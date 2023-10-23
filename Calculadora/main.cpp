@@ -8,17 +8,6 @@
 
 using namespace std;
 
-/*
-extern "C" double convert_cels_to_fahr(double);
-extern "C" double convert_cels_to_kel(valor);
-
-extern "C" double convert_kel_to_fahr(valor);
-extern "C" double convert_kel_to_cels(valor);
-
-
-extern "C" double convert_fahr_to_cels(valor);
-extern "C" double convert_cels_to_fahr(double);
-*/
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +16,10 @@ int main(int argc, char *argv[])
     w.show();
 
     return a.exec();
+}
+
+
+
 /*
     double resultado=0;
     string unidad1="";
@@ -64,4 +57,3 @@ int main(int argc, char *argv[])
      }
 
 */
-}

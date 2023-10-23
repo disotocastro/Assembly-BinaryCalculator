@@ -71,7 +71,7 @@ public:
         titlo_lbl->setAlignment(Qt::AlignCenter);
         layoutWidget = new QWidget(Widget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(20, 280, 155, 24));
+        layoutWidget->setGeometry(QRect(20, 280, 261, 24));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);

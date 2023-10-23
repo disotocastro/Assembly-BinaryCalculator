@@ -2,6 +2,9 @@
 #include "ui_widget.h"
 
 extern "C" __int64 _testmain();
+//extern "C" __int64 double _metros2centimetros(double meters);
+extern "C" __int64 int _metros2centimetros(int meters);
+
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -46,6 +49,18 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Pies");
         ui->cbx_unidad2->addItem("Yardas");
         ui->cbx_unidad2->addItem("Millas");
+
+        // Llamando a ensamblador
+        int metersValue = ui->valor_unidad1->value();
+        int centimetersValue;
+
+        asm volatile (
+            "call _metros2centimetros"
+            : "=D" (centimetersValue)
+            : "D" (metersValue)
+            : "rax", "rcx"
+            );
+        ui->conversion_lbl->setText(QString::number(centimetersValue) + "cm");
 
     }
     else if (arg1 == "Volumen") {
