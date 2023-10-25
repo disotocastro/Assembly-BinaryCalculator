@@ -34,5 +34,5 @@ _metros2kilometros:
     mov rax, rdi
     mov rcx, 1000
     idiv rcx
-    mov rdi, rax ; Almacena el resultado en rdi
+    ;mov rdi, rax ; Almacena el resultado en rdi
     ret

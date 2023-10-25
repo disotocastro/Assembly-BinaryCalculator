@@ -26,14 +26,23 @@ Widget::~Widget()
 // Categorias
 void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
 {
+    //Cada vez que cambia la categoría, se limpia valor de entrada
+    ui->valor_bases_num->clear();
+    ui->valor_unidad1->setValue(0);
+
     // Hacer que seleccionar categoría siempre esté en blanco
     if (arg1 == "Seleccionar Categoría") {
         ui->cbx_unidad1->clear();
         ui->cbx_unidad2->clear();
+        ui->lbl_ocultar_inicio->setVisible(true);
     }
 
+    //Cambia las unidades que se pueden seleccionar, dependiendo de la seleccion de la categoria principal
     if (arg1 == "Distancia")
     {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Milímetros");
         ui->cbx_unidad1->addItem("Centímetros");
@@ -54,11 +63,10 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Yardas");
         ui->cbx_unidad2->addItem("Millas");
     }
-
-
-
-
     else if (arg1 == "Volumen") {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Mililitros");
         ui->cbx_unidad1->addItem("Litros");
@@ -70,9 +78,11 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Mililitros");
         ui->cbx_unidad2->addItem("Galones");
         ui->cbx_unidad2->addItem("Metros Cúbicos.");
-
     }
     else if (arg1 == "Peso") {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Gramos");
         ui->cbx_unidad1->addItem("Kilogramos");
@@ -86,6 +96,9 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Onzas");
     }
     else if (arg1 == "Temperatura") {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Fahrenheit");
         ui->cbx_unidad1->addItem("Celsius");
@@ -97,6 +110,9 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Kelvin");
     }
     else if (arg1 == "Tiempo") {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Milisegundos");
         ui->cbx_unidad1->addItem("Segundos");
@@ -114,6 +130,9 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Años");
     }
     else if (arg1 == "Datos") {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Bytes");
         ui->cbx_unidad1->addItem("Kilobytes");
@@ -139,6 +158,10 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad2->addItem("Tebibit");
     }
     else if (arg1 == "Numérico") {
+        ui->lbl_ocultar_inicio->setVisible(false);
+        ui->valor_unidad1->setVisible(true);
+        ui->valor_bases_num->setVisible(true);
+        ui->valor_unidad1->setVisible(false);
         ui->cbx_unidad1->clear();
         ui->cbx_unidad1->addItem("Binario");
         ui->cbx_unidad1->addItem("Decimal");
@@ -151,17 +174,10 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
     }
 }
 
-void Widget::on_consultar_btn_clicked()
-{
 
 
 
-
-
-}
-
-
-void Widget::on_valor_unidad1_valueChanged(double arg1)
+void Widget::on_valor_unidad1_valueChanged()
 {
     int unidad1 = ui->valor_unidad1->value();
     int resultado = 0.0;
@@ -177,7 +193,7 @@ void Widget::on_valor_unidad1_valueChanged(double arg1)
             : "D" (unidad1)
             : "rax", "rcx"
             );
-        ui->conversion_lbl->setText(QString::number(resultado) + "cm");
+        ui->conversion_lbl->setText(QString::number(resultado));
         resultado = 0.0;
     }
 
@@ -189,13 +205,13 @@ void Widget::on_valor_unidad1_valueChanged(double arg1)
             : "D" (unidad1)
             : "rax", "rcx"
             );
-        ui->conversion_lbl->setText(QString::number(resultado) + "mm");
+        ui->conversion_lbl->setText(QString::number(resultado));
         resultado = 0.0;
     }
 
     else if (unidad1_text == "Metros" && unidad2_text == "Metros")
     {
-        ui->conversion_lbl->setText(QString::number(unidad1) + "m");
+        ui->conversion_lbl->setText(QString::number(unidad1));
     }
 
     else if (unidad1_text == "Metros" && unidad2_text == "Kilómetros")
@@ -206,7 +222,7 @@ void Widget::on_valor_unidad1_valueChanged(double arg1)
             : "D" (unidad1)
             : "rax", "rcx"
             );
-        ui->conversion_lbl->setText(QString::number(resultado) + "km");
+        ui->conversion_lbl->setText(QString::number(resultado) );
         resultado = 0.0;
     }
 
@@ -232,4 +248,17 @@ void Widget::on_valor_unidad1_valueChanged(double arg1)
 }
 
 
+
+
+void Widget::on_cbx_unidad1_currentTextChanged()
+{
+    ui->valor_unidad1->setValue(0);
+    on_valor_unidad1_valueChanged();
+}
+
+
+void Widget::on_cbx_unidad2_currentTextChanged()
+{
+    on_valor_unidad1_valueChanged();
+}
 

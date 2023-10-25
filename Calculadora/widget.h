@@ -19,13 +19,13 @@ public:
 private slots:
     void on_cbx_categoria_currentTextChanged(const QString &arg1);
 
-    void on_label_2_linkActivated(const QString &link);
-
-    void on_consultar_btn_clicked();
-
     void on_cbx_categoria_editTextChanged(const QString &arg1);
 
-    void on_valor_unidad1_valueChanged(double arg1);
+    void on_valor_unidad1_valueChanged();
+
+    void on_cbx_unidad1_currentTextChanged();
+
+    void on_cbx_unidad2_currentTextChanged();
 
 private:
     Ui::Widget *ui;
