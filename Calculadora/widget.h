@@ -3,6 +3,61 @@
 
 #include <QWidget>
 
+
+
+// Centimetros
+extern "C" double _centimetros2metros(double unidad);
+extern "C" double _centimetros2milimetros(double unidad);
+extern "C" double _centimetros2kilometros(double unidad);
+extern "C" double _centimetros2pulgadas(double unidad);
+extern "C" double _centimetros2pies(double unidad);
+extern "C" double _centimetros2yardas(double unidad);
+extern "C" double _centimetros2millas(double unidad);
+
+
+// Metros
+extern "C" double _metros2centimetros(double unidad);
+extern "C" double _metros2milimetros(double unidad);
+extern "C" double _metros2kilometros(double unidad);
+extern "C" double _metros2pulgadas(double unidad);
+extern "C" double _metros2pies(double unidad);
+extern "C" double _metros2yardas(double unidad);
+extern "C" double _metros2millas(double unidad);
+
+
+// Milimetros
+extern "C" double _milimetros2centimetros(double unidad);
+extern "C" double _milimetros2metros(double unidad);
+extern "C" double _milimetros2kilometros(double unidad);
+extern "C" double _milimetros2pulgadas(double unidad);
+extern "C" double _milimetros2pies(double unidad);
+extern "C" double _milimetros2yardas(double unidad);
+extern "C" double _milimetros2millas(double unidad);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE

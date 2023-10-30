@@ -1,18 +1,6 @@
 #include "widget.h"
 #include "ui_widget.h"
 
-extern "C" __int64 _testmain();
-//extern "C" double _metros2centimetros(double meters);
-extern "C" double _metros2centimetros(double meters);
-extern "C" double _metros2milimetros(double meters);
-extern "C" double _metros2kilometros(double meters);
-extern "C" double _metros2pulgadas(double meters);
-extern "C" double _metros2pies(double meters);
-extern "C" double _metros2yardas(double meters);
-extern "C" double _metros2millas(double meters);
-
-
-
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -185,7 +173,7 @@ void Widget::on_valor_unidad1_valueChanged()
     QString unidad1_text = ui->cbx_unidad1->currentText();
     QString unidad2_text = ui->cbx_unidad2->currentText();
 
-
+    // Metros
     if (unidad1_text == "Metros" && unidad2_text == "Centímetros"      )
     {
         resultado = _metros2centimetros(unidad1);
@@ -233,7 +221,102 @@ void Widget::on_valor_unidad1_valueChanged()
         ui->conversion_lbl->setText(QString::number(resultado));
     }
 
+    // Centimetros
+    if (unidad1_text == "Centímetros" && unidad2_text == "Metros"      )
+    {
+        resultado = _centimetros2metros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
 
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Milímetros")
+    {
+        resultado = _centimetros2milimetros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Centímetros")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Kilómetros")
+    {
+        resultado = _centimetros2kilometros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Pulgadas")
+    {
+        resultado = _centimetros2pulgadas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Pies")
+    {
+        resultado = _centimetros2pies(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Yardas")
+    {
+        resultado = _centimetros2yardas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Centímetros" && unidad2_text == "Millas")
+    {
+        resultado = _centimetros2millas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    // Milimetros
+
+    if (unidad1_text == "Milímetros" && unidad2_text == "Metros"      )
+    {
+        resultado = _milimetros2metros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Centímetros")
+    {
+        resultado = _milimetros2centimetros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Milímetros")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Kilómetros")
+    {
+        resultado = _milimetros2kilometros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Pulgadas")
+    {
+        resultado =  _milimetros2pulgadas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Pies")
+    {
+        resultado =  _milimetros2pies(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Yardas")
+    {
+        resultado =  _milimetros2yardas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milímetros" && unidad2_text == "Millas")
+    {
+        resultado =  _milimetros2millas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
 
 
 

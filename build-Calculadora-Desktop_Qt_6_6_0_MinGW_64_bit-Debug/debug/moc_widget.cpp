@@ -42,24 +42,22 @@ static constexpr auto qt_meta_stringdata_CLASSWidgetENDCLASS = QtMocHelpers::str
     "on_cbx_categoria_currentTextChanged",
     "",
     "arg1",
-    "on_label_2_linkActivated",
-    "link",
-    "on_consultar_btn_clicked",
     "on_cbx_categoria_editTextChanged",
-    "on_valor_unidad1_valueChanged"
+    "on_valor_unidad1_valueChanged",
+    "on_cbx_unidad1_currentTextChanged",
+    "on_cbx_unidad2_currentTextChanged"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSWidgetENDCLASS_t {
-    uint offsetsAndSizes[18];
+    uint offsetsAndSizes[16];
     char stringdata0[7];
     char stringdata1[36];
     char stringdata2[1];
     char stringdata3[5];
-    char stringdata4[25];
-    char stringdata5[5];
-    char stringdata6[25];
-    char stringdata7[33];
-    char stringdata8[30];
+    char stringdata4[33];
+    char stringdata5[30];
+    char stringdata6[34];
+    char stringdata7[34];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSWidgetENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -69,21 +67,19 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSWidgetENDCLASS_t qt_meta_string
         QT_MOC_LITERAL(7, 35),  // "on_cbx_categoria_currentTextC..."
         QT_MOC_LITERAL(43, 0),  // ""
         QT_MOC_LITERAL(44, 4),  // "arg1"
-        QT_MOC_LITERAL(49, 24),  // "on_label_2_linkActivated"
-        QT_MOC_LITERAL(74, 4),  // "link"
-        QT_MOC_LITERAL(79, 24),  // "on_consultar_btn_clicked"
-        QT_MOC_LITERAL(104, 32),  // "on_cbx_categoria_editTextChanged"
-        QT_MOC_LITERAL(137, 29)   // "on_valor_unidad1_valueChanged"
+        QT_MOC_LITERAL(49, 32),  // "on_cbx_categoria_editTextChanged"
+        QT_MOC_LITERAL(82, 29),  // "on_valor_unidad1_valueChanged"
+        QT_MOC_LITERAL(112, 33),  // "on_cbx_unidad1_currentTextCha..."
+        QT_MOC_LITERAL(146, 33)   // "on_cbx_unidad2_currentTextCha..."
     },
     "Widget",
     "on_cbx_categoria_currentTextChanged",
     "",
     "arg1",
-    "on_label_2_linkActivated",
-    "link",
-    "on_consultar_btn_clicked",
     "on_cbx_categoria_editTextChanged",
-    "on_valor_unidad1_valueChanged"
+    "on_valor_unidad1_valueChanged",
+    "on_cbx_unidad1_currentTextChanged",
+    "on_cbx_unidad2_currentTextChanged"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -105,16 +101,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSWidgetENDCLASS[] = {
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    1,   44,    2, 0x08,    1 /* Private */,
        4,    1,   47,    2, 0x08,    3 /* Private */,
-       6,    0,   50,    2, 0x08,    5 /* Private */,
-       7,    1,   51,    2, 0x08,    6 /* Private */,
-       8,    1,   54,    2, 0x08,    8 /* Private */,
+       5,    0,   50,    2, 0x08,    5 /* Private */,
+       6,    0,   51,    2, 0x08,    6 /* Private */,
+       7,    0,   52,    2, 0x08,    7 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, QMetaType::Double,    3,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -131,17 +127,15 @@ Q_CONSTINIT const QMetaObject Widget::staticMetaObject = { {
         // method 'on_cbx_categoria_currentTextChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        // method 'on_label_2_linkActivated'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        // method 'on_consultar_btn_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_cbx_categoria_editTextChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'on_valor_unidad1_valueChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>
+        // method 'on_cbx_unidad1_currentTextChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_cbx_unidad2_currentTextChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -153,8 +147,10 @@ void Widget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         (void)_t;
         switch (_id) {
         case 0: _t->on_cbx_categoria_currentTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        //case 3: _t->on_cbx_categoria_editTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 4: _t->on_valor_unidad1_valueChanged(); break;
+        //case 1: _t->on_cbx_categoria_editTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 2: _t->on_valor_unidad1_valueChanged(); break;
+        case 3: _t->on_cbx_unidad1_currentTextChanged(); break;
+        case 4: _t->on_cbx_unidad2_currentTextChanged(); break;
         default: ;
         }
     }
