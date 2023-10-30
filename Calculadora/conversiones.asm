@@ -1,4 +1,5 @@
 section .text
+;       DISTANCIA
 ; Metros
 global _metros2centimetros:function
 global _metros2milimetros:function
@@ -26,6 +27,23 @@ global _milimetros2pulgadas:function
 global _milimetros2pies:function
 global _milimetros2yardas:function
 global _milimetros2millas:function
+
+;VOLUMEN
+global _mililitros2mililitros:function
+global _mililitros2litros:function
+global _mililitros2galones:function
+global _mililitros2metroscubicos:function
+global _litros2mililitros:function
+global _litros2litros:function
+global _litros2galones:function
+global _litros2metroscubicos:function
+global _galones2mililitros:function
+global _galones2litros:function
+global _galones2galones:function
+global _galones2metroscubicos:function
+global _metroscubicos2mililitros:function
+global _metroscubicos2litros:function
+global _metroscubicos2galones:function
 
 
 ; Metros
@@ -195,7 +213,93 @@ _milimetros2millas:
     ret
 
 
+;VOLUMEN
+_mililitros2litros:
+    ; Convertir mililitros a litros: Dividir por 1000
+    ; Cargar 0.001 en xmm1
+    mov rax, 3f50624dd2f1a9fch
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_mililitros2galones:
+    ; Convertir militros a galones: Divide por 3785
+    ; Cargar 1/3785 = 0.000264201 en xmm1
+    mov rax, 3f31508ea791ee99h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_mililitros2metroscubicos:
+    ; Convertir mililitros a metros cubicos: Dividir por 1,000,000
+    ; Cargar 0.000001 en xmm1
+    mov rax, 3eb0c6f7a0b5ed8dh
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
 
+_litros2mililitros:
+    ; Convertir centímetros a metros: Dividir por 1000
+    ; Cargar 0.01 en xmm1
+    mov rax, 408f400000000000h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_litros2galones:
+    ; Convertir centímetros a metros: Dividir por 3.785
+    ; Cargar 0.264200793 en xmm1
+    mov rax, 3fd0e8aa7160c8f6h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_litros2metroscubicos:
+    ; Convertir mililitros a litros: Dividir por 1000
+    ; Cargar 0.001 en xmm1
+    mov rax, 3f50624dd2f1a9fch
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_galones2mililitros:
+    ; Convertir galones a mililitros: Multiplicar por 3786
+    ; Cargar 3786 en xmm1
+    mov rax, 40ad920000000000h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_galones2litros:
+    ; Convertir galones a litros: Multiplicar por 3,786
+    ; Cargar 3,786 en xmm1
+    mov rax, 400e49ba5e353f7dh
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_galones2metroscubicos:
+    ; Convertir mililitros a litros: Dividir por 0.003785011
+    ; Cargar 0.003785011 en xmm1
+    mov rax, 3f6f01be4eb85275h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_metroscubicos2mililitros:
+    ; Convertir metroscubicos a mililitros: Multiplicar por 1000000
+    ; Cargar 1000000 en xmm1
+    mov rax, 412e848000000000h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_metroscubicos2litros:
+    ; Convertir metroscubicos a litros: Multiplicar por 1000
+    ; Cargar 1000 en xmm1
+    mov rax, 408f400000000000h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_metroscubicos2galones:
+    ; Convertir metroscubicos a galones: Multiplicar por 264.2
+    ; Cargar 264.2 en xmm1
+    mov rax, 4070833333333333h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
 
 
 

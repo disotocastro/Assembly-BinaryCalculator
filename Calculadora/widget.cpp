@@ -63,13 +63,13 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad1->addItem("Mililitros");
         ui->cbx_unidad1->addItem("Litros");
         ui->cbx_unidad1->addItem("Galones");
-        ui->cbx_unidad1->addItem("Metros Cúbicos.");
+        ui->cbx_unidad1->addItem("Metros Cúbicos");
 
         ui->cbx_unidad2->clear();
         ui->cbx_unidad2->addItem("Litros");
         ui->cbx_unidad2->addItem("Mililitros");
         ui->cbx_unidad2->addItem("Galones");
-        ui->cbx_unidad2->addItem("Metros Cúbicos.");
+        ui->cbx_unidad2->addItem("Metros Cúbicos");
     }
     else if (arg1 == "Peso") {
         //ui->lbl_ocultar_inicio->setVisible(false);
@@ -319,148 +319,106 @@ void Widget::on_valor_unidad1_valueChanged()
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //SECCION VOLUMEN
+
+        //SECCION MILILITROS
+    else if (unidad1_text == "Mililitros" && unidad2_text == "Mililitros")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Mililitros" && unidad2_text == "Litros")
+    {
+        resultado = _mililitros2litros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Mililitros" && unidad2_text == "Galones")
+    {
+        resultado = _mililitros2galones(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Mililitros" && unidad2_text == "Metros Cúbicos")
+    {
+        resultado = _mililitros2metroscubicos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+
+    //SECCION LITROS
+        else if (unidad1_text == "Litros" && unidad2_text == "Mililitros")
+    {
+
+        resultado = _litros2mililitros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Litros" && unidad2_text == "Litros")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Litros" && unidad2_text == "Galones")
+    {
+        resultado = _litros2galones(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Litros" && unidad2_text == "Metros Cúbicos")
+    {
+        resultado = _litros2metroscubicos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+        //SECCION GALONES
+    else if (unidad1_text == "Galones" && unidad2_text == "Mililitros")
+    {
+        resultado = _galones2mililitros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Galones" && unidad2_text == "Litros")
+    {
+        resultado = _galones2litros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Galones" && unidad2_text == "Galones")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Galones" && unidad2_text == "Metros Cúbicos")
+    {
+        resultado = _galones2metroscubicos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+
+     //SECCION METROS CUBICOS
+    else if (unidad1_text == "Metros Cúbicos" && unidad2_text == "Mililitros")
+    {
+        resultado = _metroscubicos2mililitros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+     else if (unidad1_text == "Metros Cúbicos" && unidad2_text == "Litros")
+    {
+        resultado = _metroscubicos2litros(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+     else if (unidad1_text == "Metros Cúbicos" && unidad2_text == "Galones")
+    {
+        resultado = _metroscubicos2galones(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+     else if (unidad1_text == "Metros Cúbicos" && unidad2_text == "Metros Cúbicos")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
 
 }
 

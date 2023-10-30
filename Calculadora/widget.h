@@ -36,6 +36,24 @@ extern "C" double _milimetros2millas(double unidad);
 
 
 
+//VOLUMEN
+//MILILITROS
+extern "C" double _mililitros2litros(double unidad);
+extern "C" double _mililitros2galones(double unidad);
+extern "C" double _mililitros2metroscubicos(double unidad);
+//LITROS
+extern "C" double _litros2mililitros(double unidad);
+extern "C" double _litros2metroscubicos(double unidad);
+extern "C" double _litros2galones(double unidad);
+//GALONES
+extern "C" double _galones2mililitros(double unidad);
+extern "C" double _galones2litros(double unidad);
+extern "C" double _galones2metroscubicos(double unidad);
+//METROS CUBICOS
+extern "C" double _metroscubicos2mililitros(double unidad);
+extern "C" double _metroscubicos2litros(double unidad);
+extern "C" double _metroscubicos2galones(double unidad);
+
 
 
 
