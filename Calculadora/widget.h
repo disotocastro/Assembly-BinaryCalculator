@@ -96,6 +96,30 @@ extern "C" double _millas2pulgadas(double unidad);
 
 
 
+// Pesos
+
+
+
+// Onzas
+extern "C" double _onzas2gramos(double unidad);
+extern "C" double _onzas2kilogramos(double unidad);
+extern "C" double _onzas2libras(double unidad);
+
+// Libras
+extern "C" double _libras2gramos(double unidad);
+extern "C" double _libras2kilogramos(double unidad);
+extern "C" double _libras2onzas(double unidad);
+//Kilogramos
+extern "C" double _kilogramos2gramos(double unidad);
+extern "C" double _kilogramos2libras(double unidad);
+extern "C" double _kilogramos2onzas(double unidad);
+
+//Gramos
+extern "C" double _gramos2kilogramos(double unidad);
+extern "C" double _gramos2libras(double unidad);
+extern "C" double _gramos2onzas(double unidad);
+
+
 
 //VOLUMEN
 //MILILITROS

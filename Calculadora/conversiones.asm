@@ -78,6 +78,30 @@ global _millas2yardas:function
 global _millas2pulgadas:function
 
 
+
+
+
+; PESO
+
+
+global _onzas2gramos:function
+global _onzas2kilogramos:function
+global _onzas2libras:function
+
+global _libras2gramos:function
+global _libras2kilogramos:function
+global _libras2onzas:function
+
+global _kilogramos2gramos:function
+global _kilogramos2libras:function
+global _kilogramos2onzas:function
+
+global _gramos2kilogramos:function
+global _gramos2libras:function
+global _gramos2onzas:function
+
+
+
 ;VOLUMEN
 global _mililitros2mililitros:function
 global _mililitros2litros:function
@@ -549,6 +573,128 @@ _millas2yardas:
     ret
 
 
+; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+; Peso
+
+
+_gramos2kilogramos:
+    ; Convertir gramos a kilogramos: Dividir por 1000
+    ; Cargar 1/1000 (0.001) en xmm1
+    mov rax, 408f400000000000h
+    movq xmm1, rax
+    vdivsd xmm0, xmm0, xmm1
+    ret
+
+_gramos2libras:
+    ; Convertir gramos a libras: Multiplicar por 0.00220462
+    ; Cargar 0.00220462 en xmm1
+    mov rax, 3f620f6c599a7b16h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_gramos2onzas:
+    ; Convertir gramos a onzas: Multiplicar por 0.035274
+    ; Cargar 0.035274 en xmm1
+    mov rax, 403c59999999999ah
+    movq xmm1, rax
+    vdivsd xmm0, xmm0, xmm1
+    ret
+
+
+; Onzas
+_onzas2gramos:
+    ; Convertir onzas a gramos: Multiplicar por 28.3495
+    ; Cargar 28.3495 en xmm1
+    mov rax, 403c5978d4fdf3b6h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_onzas2kilogramos:
+    ; Convertir onzas a kilogramos: Multiplicar por 0.0283495
+    ; Cargar 0.0283495 en xmm1
+    mov rax, 3f9d07a6bd6e8af8h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_onzas2libras:
+    ; Convertir onzas a libras: Dividir por 16
+    mov rax, 4030000000000000h
+    movq xmm1, rax
+    vdivsd xmm0, xmm0, xmm1
+    ret
+
+; Libras
+_libras2gramos:
+    ; Convertir libras a gramos: Multiplicar por 453.592
+    ; Cargar 453.592 en xmm1
+    mov rax, 407c5978d4fdf3b6h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_libras2kilogramos:
+    ; Convertir libras a kilogramos: Multiplicar por 0.453592
+    ; Cargar 0.453592 en xmm1
+    mov rax, 3fdd07a6bd6e8af8h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_libras2onzas:
+    ; Convertir libras a onzas: Multiplicar por 16
+    ; Cargar 16 en xmm1
+    mov rax, 4030000000000000h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+; Kilogramos
+_kilogramos2gramos:
+    ; Convertir kilogramos a gramos: Multiplicar por 1000
+    ; Cargar 1000 en xmm1
+    mov rax, 408f400000000000h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_kilogramos2libras:
+    ; Convertir kilogramos a libras: Multiplicar por 2.20462
+    ; Cargar 2.20462 en xmm1
+    mov rax, 4001a30fcf80dc33h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_kilogramos2onzas:
+    ; Convertir kilogramos a onzas: Multiplicar por 35.274
+    ; Cargar 35.274 en xmm1
+    mov rax, 4041a3126e978d50h
+    movq xmm1, rax
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ;VOLUMEN
@@ -638,7 +784,3 @@ _metroscubicos2galones:
     movq xmm1, rax
     vmulsd xmm0, xmm0, xmm1
     ret
-
-
-
-

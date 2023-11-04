@@ -570,7 +570,7 @@ void Widget::on_valor_unidad1_valueChanged()
 
 
 
-    //SECCION VOLUMEN
+//SECCION VOLUMEN
 
        //SECCION MILILITROS
     else if (unidad1_text == "Mililitros" && unidad2_text == "Mililitros")
@@ -598,7 +598,7 @@ void Widget::on_valor_unidad1_valueChanged()
 
 
     //SECCION LITROS
-        else if (unidad1_text == "Litros" && unidad2_text == "Mililitros")
+    else if (unidad1_text == "Litros" && unidad2_text == "Mililitros")
     {
 
         resultado = _litros2mililitros(unidad1);
@@ -665,6 +665,112 @@ void Widget::on_valor_unidad1_valueChanged()
         resultado = _metroscubicos2galones(unidad1);
         ui->conversion_lbl->setText(QString::number(resultado));
     }
+
+
+
+
+    // PESO
+
+    // Gramos
+    if (unidad1_text == "Gramos" && unidad2_text == "Kilogramos"      )
+    {
+        resultado = _gramos2kilogramos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Gramos" && unidad2_text == "Libras")
+    {
+        resultado = _gramos2libras(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Gramos" && unidad2_text == "Onzas")
+    {
+        resultado = _gramos2onzas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Gramos" && unidad2_text == "Gramos")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+
+    // Kilogramos
+    if (unidad1_text == "Kilogramos" && unidad2_text == "Gramos"      )
+    {
+        resultado = _kilogramos2gramos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Kilogramos" && unidad2_text == "Libras")
+    {
+        resultado = _kilogramos2libras(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Kilogramos" && unidad2_text == "Onzas")
+    {
+        resultado = _kilogramos2onzas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+    else if (unidad1_text == "Kilogramos" && unidad2_text == "Kilogramos")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+
+    // Kilogramos
+    if (unidad1_text == "Libras" && unidad2_text == "Gramos"      )
+    {
+        resultado = _libras2gramos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Libras" && unidad2_text == "Kilogramos")
+    {
+        resultado = _libras2kilogramos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Libras" && unidad2_text == "Onzas")
+    {
+        resultado = _libras2onzas(unidad1);
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Libras" && unidad2_text == "Libras")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+
+    // Onzas
+
+    if (unidad1_text == "Onzas" && unidad2_text == "Gramos"      )
+    {\
+        resultado = _onzas2gramos(unidad1);
+
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Onzas" && unidad2_text == "Kilogramos")
+    {
+        resultado = _onzas2kilogramos(unidad1);
+
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Onzas" && unidad2_text == "Libras")
+    {
+        resultado = _onzas2libras(unidad1);
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+    else if (unidad1_text == "Onzas" && unidad2_text == "Onzas")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
 
 
 

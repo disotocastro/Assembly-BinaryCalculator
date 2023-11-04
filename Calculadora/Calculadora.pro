@@ -25,12 +25,14 @@ OTHER_FILES += $$NASM_SOURCES
 nasm.output = ${QMAKE_FILE_BASE}.o
 nasm.commands = nasm $$NASMEXTRAFLAGS -o ${QMAKE_FILE_BASE}.o ${QMAKE_FILE_NAME}
 nasm.input = NASM_SOURCES
-
 NASM_SOURCES = conversiones.asm
-
 
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    peso.asm \
+    volumen.asm
