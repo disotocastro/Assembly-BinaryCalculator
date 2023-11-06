@@ -736,7 +736,7 @@ void Widget::on_valor_unidad1_valueChanged()
     else if (unidad1_text == "Libras" && unidad2_text == "Onzas")
     {
         resultado = _libras2onzas(unidad1);
-        ui->conversion_lbl->setText(QString::number(unidad1));
+        ui->conversion_lbl->setText(QString::number(resultado));
     }
 
     else if (unidad1_text == "Libras" && unidad2_text == "Libras")
@@ -748,28 +748,91 @@ void Widget::on_valor_unidad1_valueChanged()
     // Onzas
 
     if (unidad1_text == "Onzas" && unidad2_text == "Gramos"      )
-    {\
+    {
         resultado = _onzas2gramos(unidad1);
-
         ui->conversion_lbl->setText(QString::number(resultado));
     }
 
     else if (unidad1_text == "Onzas" && unidad2_text == "Kilogramos")
     {
         resultado = _onzas2kilogramos(unidad1);
-
         ui->conversion_lbl->setText(QString::number(resultado));
     }
 
     else if (unidad1_text == "Onzas" && unidad2_text == "Libras")
     {
         resultado = _onzas2libras(unidad1);
-        ui->conversion_lbl->setText(QString::number(unidad1));
+        ui->conversion_lbl->setText(QString::number(resultado));
     }
+
     else if (unidad1_text == "Onzas" && unidad2_text == "Onzas")
     {
         ui->conversion_lbl->setText(QString::number(unidad1));
     }
+
+    // TEMPERATURA
+
+
+
+
+    if (unidad1_text == "Celsius" && unidad2_text == "Fahrenheit"      )
+    {
+        resultado = _Celsius2Fahrenheit(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Celsius" && unidad2_text == "Kelvin")
+    {
+        resultado = _Celsius2Kelvin(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Celsius" && unidad2_text == "Celsius")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+
+
+    if (unidad1_text == "Fahrenheit" && unidad2_text == "Celsius"      )
+    {
+        resultado = _Fahrenheit2Celsius(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Fahrenheit" && unidad2_text == "Kelvin")
+    {
+        resultado = _Fahrenheit2Kelvin(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Fahrenheit" && unidad2_text == "Fahrenheit")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+
+
+    if (unidad1_text == "Kelvin" && unidad2_text == "Celsius"      )
+    {
+        resultado = _Kelvin2Celsius(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Kelvin" && unidad2_text == "Fahrenheit")
+    {
+        resultado = _Kelvin2Fahrenheit(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Kelvin" && unidad2_text == "Kelvin")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+
+
+
 
 
 

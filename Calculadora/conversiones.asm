@@ -47,7 +47,6 @@ global _pulgadas2pies:function
 global _pulgadas2yardas:function
 global _pulgadas2millas:function
 
-
 ; Pies
 global _pies2metros:function
 global _pies2centimetros:function
@@ -56,7 +55,6 @@ global _pies2kilometros:function
 global _pies2pulgadas:function
 global _pies2yardas:function
 global _pies2millas:function
-
 
 ;Yardas
 global _yardas2metros:function
@@ -82,8 +80,6 @@ global _millas2pulgadas:function
 
 
 ; PESO
-
-
 global _onzas2gramos:function
 global _onzas2kilogramos:function
 global _onzas2libras:function
@@ -118,6 +114,15 @@ global _galones2metroscubicos:function
 global _metroscubicos2mililitros:function
 global _metroscubicos2litros:function
 global _metroscubicos2galones:function
+;Peso
+global _Celsius2Fahrenheit:function
+global _Celsius2Kelvin:function
+
+global _Kelvin2Fahrenheit:function
+global _Kelvin2Celsius:function
+
+global _Fahrenheit2Celsius:function
+global _Fahrenheit2Kelvin:function
 
 
 ; Metros
@@ -516,7 +521,6 @@ _yardas2millas:
 
 
 ; MIllas
-
 _millas2kilometros:
     ; Convertir millas a kilómetros: Multiplicar por 1.60934
     ; Cargar 1.60934 en xmm1
@@ -573,11 +577,7 @@ _millas2yardas:
     ret
 
 
-; ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-; Peso
-
-
+; ============ PESO ============
 _gramos2kilogramos:
     ; Convertir gramos a kilogramos: Dividir por 1000
     ; Cargar 1/1000 (0.001) en xmm1
@@ -678,26 +678,7 @@ _kilogramos2onzas:
     ret
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;VOLUMEN
+; ============ VOLUMEN ============
 _mililitros2litros:
     ; Convertir mililitros a litros: Dividir por 1000
     ; Cargar 0.001 en xmm1
@@ -784,3 +765,100 @@ _metroscubicos2galones:
     movq xmm1, rax
     vmulsd xmm0, xmm0, xmm1
     ret
+
+
+; ============ Temperatura ============
+_Celsius2Fahrenheit:
+    ; F = C * 9/5 + 32
+    ; Primero, cargamos la constante 9/5 en xmm1.
+    mov rax, 3ffccccccccccccdh ; 9/5 en representación hexadecimal
+    movq xmm1, rax
+    ; Multiplicamos C por 9/5.
+    vmulsd xmm0, xmm0, xmm1
+    ; Ahora, cargamos la constante 32 en xmm1.
+    mov rax, 4040000000000000h ; 32 en representación hexadecimal
+    movq xmm1, rax
+    ; Sumamos 32 al resultado.
+    vaddsd xmm0, xmm0, xmm1
+    ret
+
+_Celsius2Kelvin:
+    ; K = C + 273.15
+    ; Cargamos la constante 273.15 en xmm1.
+    mov rax, 4071126666666666h ; 273.15 en representación hexadecimal
+    movq xmm1, rax
+    ; Sumamos 273.15 a C.
+    vaddsd xmm0, xmm0, xmm1
+    ret
+
+_Kelvin2Fahrenheit:
+    ; F = (K - 273.15) * 9/5 + 32
+    ; Cargamos la constante 273.15 en xmm1.
+    mov rax, 4071126666666666h ; 273.15 en representación hexadecimal
+    movq xmm1, rax
+    ; Restamos 273.15 de K.
+    vsubsd xmm0, xmm0, xmm1
+    ; Cargamos la constante 9/5 en xmm1.
+    mov rax, 3ffccccccccccccdh ; 9/5 en representación hexadecimal
+    movq xmm1, rax
+    ; Multiplicamos por 9/5.
+    vmulsd xmm0, xmm0, xmm1
+    ; Cargamos la constante 32 en xmm1.
+    mov rax, 4040000000000000h ; 32 en representación hexadecimal
+    movq xmm1, rax
+    ; Sumamos 32 al resultado.
+    vaddsd xmm0, xmm0, xmm1
+    ret
+
+_Kelvin2Celsius:
+    ; C = K - 273.15
+    ; Cargamos la constante 273.15 en xmm1.
+    mov rax, 4071126666666666h ; 273.15 en representación hexadecimal
+    movq xmm1, rax
+    ; Restamos 273.15 de K.
+    vsubsd xmm0, xmm0, xmm1
+    ret
+
+_Fahrenheit2Celsius:
+    ; C = (F - 32) * 5/9
+    ; Cargamos la constante 32 en xmm1.
+    mov rax, 4040000000000000h ; 32 en representación hexadecimal
+    movq xmm1, rax
+    ; Restamos 32 de F.
+    vsubsd xmm0, xmm0, xmm1
+    ; Cargamos la constante 5/9 en xmm1.
+    mov rax, 3fe1c71c71c71c72h ; 5/9 en representación hexadecimal
+    movq xmm1, rax
+    ; Multiplicamos por 5/9.
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Fahrenheit2Kelvin:
+    ; K = (F - 32) * 5/9 + 273.15
+    ; Cargamos la constante 32 en xmm1.
+    mov rax, 4040000000000000h ; 32 en representación hexadecimal correcta
+    movq xmm1, rax
+    ; Restamos 32 de F.
+    vsubsd xmm0, xmm0, xmm1
+    ; Cargamos la constante 5/9 en xmm1. Necesitamos el valor correcto en precisión doble.
+    mov rax, 3fe1c71c71c71c72h ; 5/9 en representación hexadecimal correcta
+    movq xmm1, rax
+    ; Multiplicamos el resultado por 5/9.
+    vmulsd xmm0, xmm0, xmm1
+    ; Cargamos la constante 273.15 en xmm1.
+    mov rax, 4071126666666666h ; 273.15 en representación hexadecimal correcta
+    movq xmm1, rax
+    ; Sumamos 273.15 al resultado.
+    vaddsd xmm0, xmm0, xmm1
+    ret
+
+
+
+
+
+
+
+
+
+
+
