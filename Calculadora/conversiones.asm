@@ -75,10 +75,6 @@ global _millas2pies:function
 global _millas2yardas:function
 global _millas2pulgadas:function
 
-
-
-
-
 ; PESO
 global _onzas2gramos:function
 global _onzas2kilogramos:function
@@ -123,6 +119,55 @@ global _Kelvin2Celsius:function
 
 global _Fahrenheit2Celsius:function
 global _Fahrenheit2Kelvin:function
+
+global _Milisegundos2Segundos:function
+global _Milisegundos2Minutos:function
+global _Milisegundos2Horas:function
+global _Milisegundos2Días:function
+global _Milisegundos2Semanas:function
+global _Milisegundos2Anios:function
+
+global _Segundos2Minutos:function
+global _Segundos2Horas:function
+global _Segundos2Dias:function
+global _Segundos2Semanas:function
+global _Segundos2Anios:function
+global _Segundos2Milisegundos:function
+
+global _Minutos2Segundos:function
+global _Minutos2Horas:function
+global _Minutos2Dias:function
+global _Minutos2Semanas:function
+global _Minutos2Anios:function
+global _Minutos2Milisegundos:function
+
+global _Horas2Segundos:function
+global _Horas2Minutos:function
+global _Horas2Dias:function
+global _Horas2Semanas:function
+global _Horas2Anios:function
+global _Horas2Milisegundos:function
+
+global _Dias2Segundos:function
+global _Dias2Minutos:function
+global _Dias2Horas:function
+global _Dias2Semanas:function
+global _Dias2Anios:function
+global _Dias2Milisegundos:function
+
+global _Semanas2Segundos:function
+global _Semanas2Minutos:function
+global _Semanas2Dias:function
+global _Semanas2Horas:function
+global _Semanas2Anios:function
+global _Semanas2Milisegundos:function
+
+global _Anios2Segundos:function
+global _Anios2Minutos:function
+global _Anios2Dias:function
+global _Anios2Horas:function
+global _Anios2Semanas:function
+global _Anios2Milisegundos:function
 
 
 ; Metros
@@ -855,10 +900,355 @@ _Fahrenheit2Kelvin:
 
 
 
+; ============ Tiempo ============
+_Milisegundos2Segundos:
+    ; Carga el valor 0.001 (1/1000) en xmm1
+    mov rax, 3f50624dd2f1a9fch ; valor en hexadecimal para el double 0.001
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Milisegundos2Minutos:
+    ; Carga el valor 0.0000166667 (1/60000) en xmm1
+    mov rax, 3ef179eee7257ef0h ; valor en hexadecimal para el double 0.0000166667
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Milisegundos2Horas:
+    ; Carga el valor 0.00000027778 (1/3600000) en xmm1
+    mov rax, 3e92a4395c1f6c28h ; valor en hexadecimal para el double 0.00000027778
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Milisegundos2Días:
+    ; Carga el valor 0.000000011574 (1/86400000) en xmm1
+    mov rax, 3e48dadfb0b28ea3h ; valor en hexadecimal para el double 0.000000011574
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Milisegundos2Semanas:
+    ; Carga el valor 0.0000000016534 (1/604800000) en xmm1
+    mov rax, 3e1c67bae7ede2b0h ; valor en hexadecimal para el double 0.0000000016534
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Milisegundos2Anios:
+    ; Carga el valor 0.00000000003171 (1/31536000000) en xmm1
+    mov rax, 3dc16ec92749e5f2h ; valor en hexadecimal para el double 0.00000000003171
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+; Segundos
+_Segundos2Minutos:
+    ; Carga el valor 0.0166667 (1/60) en xmm1
+    mov rax, 3f9111134dba9df6h ; valor en hexadecimal para el double 0.0166667
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Segundos2Horas:
+    ; Carga el valor 0.00027778 (1/3600) en xmm1
+    mov rax, 3f32346003f6af9fh ; valor en hexadecimal para el double 0.00027778
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Segundos2Dias:
+    ; Carga el valor 0.000011574 (1/86400) en xmm1
+    mov rax, 3ee845be728e5f4bh ; valor en hexadecimal para el double 0.000011574
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Segundos2Semanas:
+    ; Carga el valor 0.0000016534 (1/604800) en xmm1
+    mov rax, 3ebbbd4c867e4f5fh ; valor en hexadecimal para el double 0.0000016534
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Segundos2Anios:
+    ; Carga el valor 0.00000003171 (1/31536000) en xmm1
+    mov rax, 3e610630705e2a8eh ; valor en hexadecimal para el double 0.00000003171
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+_Segundos2Milisegundos:
+    ; Carga el valor 1000 en xmm1
+    mov rax, 408f400000000000h ; valor en hexadecimal para el double 1000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
 
 
 
+_Minutos2Segundos:
+    ; Carga el valor 60 en xmm1
+    mov rax, 404e000000000000h ; valor en hexadecimal para el double 60
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Minutos2Horas:
+    ; Carga el valor 0.0166667 (1/60) en xmm1
+    mov rax, 3f9111134dba9df6h ; valor en hexadecimal para el double 0.0166667
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Minutos2Dias:
+    ; Carga el valor 0.000694444 (1/1440) en xmm1
+    mov rax, 3f46c16b226b6d6ah ; valor en hexadecimal para el double 0.000694444
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Minutos2Semanas:
+    ; Carga el valor 0.0000992063 (1/10080) en xmm1
+    mov rax, 3f1a019f41983390h ; valor en hexadecimal para el double 0.0000992063
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Minutos2Anios:
+    ; Carga el valor 0.0000019026 (1/525600) en xmm1
+    mov rax, 3ebfeb9ad2b08fcbh ; valor en hexadecimal para el double 0.0000019026
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Minutos2Milisegundos:
+    ; Carga el valor 60000 en xmm1
+    mov rax, 40ed4c0000000000h ; valor en hexadecimal para el double 60000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+; HORAS
+_Horas2Segundos:
+    ; Carga el valor 3600 en xmm1
+    mov rax, 40ac200000000000h ; valor en hexadecimal para el double 3600
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Horas2Minutos:
+    ; Carga el valor 60 en xmm1
+    mov rax, 404e000000000000h ; valor en hexadecimal para el double 60
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Horas2Dias:
+    ; Carga el valor 0.0416667 (1/24) en xmm1
+    mov rax, 3fa5555673aa1bc8h ; valor en hexadecimal para el double 0.0416667
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Horas2Semanas:
+    ; Carga el valor 0.00595238 (1/168) en xmm1
+    mov rax, 3f786185d6ef0f98h ; valor en hexadecimal para el double 0.00595238
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Horas2Anios:
+    ; Carga el valor 0.000114155 (1/8760) en xmm1
+    mov rax, 3f1deccff7799ea7h ; valor en hexadecimal para el double 0.000114155
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+; Conversión de horas a milisegundos
+; 1 hora = 3,600,000 milisegundos
+_Horas2Milisegundos:
+    ; Carga el valor 3600000 en xmm1
+    mov rax, 414b774000000000h ; valor en hexadecimal para el double 3600000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+; Dias
+_Dias2Segundos:
+    ; Carga el valor 86400 en xmm1
+    mov rax, 40f5180000000000h ; valor en hexadecimal para el double 86400
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Dias2Minutos:
+    ; Carga el valor 1440 en xmm1
+    mov rax, 4096800000000000h ; valor en hexadecimal para el double 1440
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Dias2Horas:
+    ; Carga el valor 24 en xmm1
+    mov rax, 4038000000000000h ; valor en hexadecimal para el double 24
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Dias2Semanas:
+    ; Carga el valor 0.142857 (1/7) en xmm1
+    mov rax, 3fc249235f809918h ; valor en hexadecimal para el double 0.142857
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Dias2Anios:
+    ; Carga el valor 0.00273973 (1/365) en xmm1
+    mov rax, 3f6671a157feef8ah ; valor en hexadecimal para el double 0.00273973
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Dias2Milisegundos:
+    ; Carga el valor 86400000 en xmm1
+    mov rax, 4194997000000000h ; valor en hexadecimal para el double 86400000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
 
 
 
+; SEMANAS
 
+_Semanas2Segundos:
+    ; Carga el valor 604800 en xmm1
+    mov rax, 4122750000000000h ; valor en hexadecimal para el double 604800
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Semanas2Minutos:
+    ; Carga el valor 10080 en xmm1
+    mov rax, 40c3b00000000000h ; valor en hexadecimal para el double 10080
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Semanas2Horas:
+    ; Carga el valor 168 en xmm1
+    mov rax, 4065000000000000h ; valor en hexadecimal para el double 168
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Semanas2Dias:
+    ; Carga el valor 7 en xmm1
+    mov rax, 401c000000000000h ; valor en hexadecimal para el double 7
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Semanas2Anios:
+    ; Carga el valor aproximado de 1/52.1775 en xmm1
+    mov rax, 3f939ffd60e94ee4h ; valor en hexadecimal para el double aproximado de 0.019165 (1/52.1775)
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Semanas2Milisegundos:
+    ; Carga el valor 604800000 en xmm1
+    mov rax, 41c2064200000000h ; valor en hexadecimal para el double 604800000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+;ANIOS
+
+_Anios2Segundos:
+    ; Carga el valor 31536000 en xmm1
+    mov rax, 417e133800000000h ; valor en hexadecimal para el double 31536000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Anios2Minutos:
+    ; Carga el valor 525600 en xmm1
+    mov rax, 41200a4000000000h ; valor en hexadecimal para el double 525600
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Anios2Horas:
+    ; Carga el valor 8760 en xmm1
+    mov rax, 40c11c0000000000h ; valor en hexadecimal para el double 8760
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Anios2Dias:
+    ; Carga el valor 365 en xmm1
+    mov rax, 4076d00000000000h ; valor en hexadecimal para el double 365
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Anios2Semanas:
+    ; Carga el valor 52.1775 en xmm1 para convertir años a semanas
+    mov rax, 404a16b851eb851fh ; valor en hexadecimal para el double 52.1775
+    movq xmm1, rax
+    ; xmm0 = xmm0 / xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Anios2Milisegundos:
+    ; Carga el valor 31536000000 en xmm1
+    mov rax, 421d5ec4b0000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret

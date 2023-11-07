@@ -87,9 +87,6 @@ extern "C" double _millas2pulgadas(double unidad);
 
 
 // Pesos
-
-
-
 // Onzas
 extern "C" double _onzas2gramos(double unidad);
 extern "C" double _onzas2kilogramos(double unidad);
@@ -99,6 +96,7 @@ extern "C" double _onzas2libras(double unidad);
 extern "C" double _libras2gramos(double unidad);
 extern "C" double _libras2kilogramos(double unidad);
 extern "C" double _libras2onzas(double unidad);
+
 //Kilogramos
 extern "C" double _kilogramos2gramos(double unidad);
 extern "C" double _kilogramos2libras(double unidad);
@@ -129,18 +127,72 @@ extern "C" double _metroscubicos2mililitros(double unidad);
 extern "C" double _metroscubicos2litros(double unidad);
 extern "C" double _metroscubicos2galones(double unidad);
 
-
-
 // Temperatura
-
 extern "C" double _Celsius2Fahrenheit(double unidad);
 extern "C" double _Celsius2Kelvin(double unidad);
-
 extern "C" double _Kelvin2Fahrenheit(double unidad);
 extern "C" double _Kelvin2Celsius(double unidad);
-
 extern "C" double _Fahrenheit2Celsius(double unidad);
 extern "C" double _Fahrenheit2Kelvin(double unidad);
+
+// Tiempo
+extern "C" double _Milisegundos2Segundos(double unidad);
+extern "C" double _Milisegundos2Minutos(double unidad);
+extern "C" double _Milisegundos2Horas(double unidad);
+extern "C" double _Milisegundos2Días(double unidad);
+extern "C" double _Milisegundos2Semanas(double unidad);
+extern "C" double _Milisegundos2Anios(double unidad);
+
+extern "C" double _Segundos2Minutos(double unidad);
+extern "C" double _Segundos2Horas(double unidad);
+extern "C" double _Segundos2Dias(double unidad);
+extern "C" double _Segundos2Semanas(double unidad);
+extern "C" double _Segundos2Anios(double unidad);
+extern "C" double _Segundos2Milisegundos(double unidad);
+
+extern "C" double _Minutos2Segundos(double unidad);
+extern "C" double _Minutos2Horas(double unidad);
+extern "C" double _Minutos2Dias(double unidad);
+extern "C" double _Minutos2Semanas(double unidad);
+extern "C" double _Minutos2Anios(double unidad);
+extern "C" double _Minutos2Milisegundos(double unidad);
+
+extern "C" double _Horas2Minutos(double unidad);
+extern "C" double _Horas2Segundos(double unidad);
+extern "C" double _Horas2Dias(double unidad);
+extern "C" double _Horas2Semanas(double unidad);
+extern "C" double _Horas2Anios(double unidad);
+extern "C" double _Horas2Milisegundos(double unidad);
+
+extern "C" double _Dias2Minutos(double unidad);
+extern "C" double _Dias2Horas(double unidad);
+extern "C" double _Dias2Segundos(double unidad);
+extern "C" double _Dias2Semanas(double unidad);
+extern "C" double _Dias2Anios(double unidad);
+extern "C" double _Dias2Milisegundos(double unidad);
+
+extern "C" double _Semanas2Minutos(double unidad);
+extern "C" double _Semanas2Horas(double unidad);
+extern "C" double _Semanas2Dias(double unidad);
+extern "C" double _Semanas2Segundos(double unidad);
+extern "C" double _Semanas2Anios(double unidad);
+extern "C" double _Semanas2Milisegundos(double unidad);
+
+extern "C" double _Anios2Minutos(double unidad);
+extern "C" double _Anios2Horas(double unidad);
+extern "C" double _Anios2Dias(double unidad);
+extern "C" double _Anios2Semanas(double unidad);
+extern "C" double _Anios2Segundos(double unidad);
+extern "C" double _Anios2Milisegundos(double unidad);
+
+
+
+
+
+
+
+
+
 
 
 

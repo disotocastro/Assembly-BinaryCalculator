@@ -109,16 +109,18 @@ void Widget::on_cbx_categoria_currentTextChanged(const QString &arg1)
         ui->cbx_unidad1->addItem("Milisegundos");
         ui->cbx_unidad1->addItem("Segundos");
         ui->cbx_unidad1->addItem("Minutos");
+        ui->cbx_unidad1->addItem("Horas");
         ui->cbx_unidad1->addItem("Días");
-        ui->cbx_unidad1->addItem("Semanas ");
+        ui->cbx_unidad1->addItem("Semanas");
         ui->cbx_unidad1->addItem("Años");
 
         ui->cbx_unidad2->clear();
-        ui->cbx_unidad2->addItem("Segundos");
         ui->cbx_unidad2->addItem("Milisegundos");
+        ui->cbx_unidad2->addItem("Segundos");
         ui->cbx_unidad2->addItem("Minutos");
+        ui->cbx_unidad2->addItem("Horas");
         ui->cbx_unidad2->addItem("Días");
-        ui->cbx_unidad2->addItem("Semanas ");
+        ui->cbx_unidad2->addItem("Semanas");
         ui->cbx_unidad2->addItem("Años");
     }
     else if (arg1 == "Datos") {
@@ -831,12 +833,311 @@ void Widget::on_valor_unidad1_valueChanged()
     }
 
 
+// Tiempo
+
+
+    if (unidad1_text == "Milisegundos" && unidad2_text == "Segundos")
+    {
+        resultado = _Milisegundos2Segundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milisegundos" && unidad2_text == "Minutos")
+    {
+        resultado = _Milisegundos2Minutos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milisegundos" && unidad2_text == "Horas")
+    {
+        resultado = _Milisegundos2Horas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milisegundos" && unidad2_text == "Días")
+    {
+        resultado = _Milisegundos2Días(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milisegundos" && unidad2_text == "Semanas")
+    {
+        resultado = _Milisegundos2Semanas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milisegundos" && unidad2_text == "Años")
+    {
+        resultado = _Milisegundos2Anios(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Milisegundos" && unidad2_text == "Milisegundos")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
 
 
 
 
 
 
+    // Segundos
+    if (unidad1_text == "Segundos" && unidad2_text == "Minutos")
+    {
+        resultado = _Segundos2Minutos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Segundos" && unidad2_text == "Segundos")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Segundos" && unidad2_text == "Horas")
+    {
+        resultado = _Segundos2Horas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Segundos" && unidad2_text == "Días")
+    {
+        resultado = _Segundos2Dias(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Segundos" && unidad2_text == "Semanas")
+    {
+        resultado = _Segundos2Semanas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Segundos" && unidad2_text == "Años")
+    {
+        resultado = _Segundos2Anios(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Segundos" && unidad2_text == "Milisegundos")
+    {
+        resultado = _Segundos2Milisegundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+
+
+
+    // Minutos
+    if (unidad1_text == "Minutos" && unidad2_text == "Segundos")
+    {
+        resultado = _Minutos2Segundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Minutos" && unidad2_text == "Minutos")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Minutos" && unidad2_text == "Horas")
+    {
+        resultado = _Minutos2Horas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Minutos" && unidad2_text == "Días")
+    {
+        resultado = _Minutos2Dias(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Minutos" && unidad2_text == "Semanas")
+    {
+        resultado = _Minutos2Semanas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Minutos" && unidad2_text == "Años")
+    {
+        resultado = _Minutos2Anios(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Minutos" && unidad2_text == "Milisegundos")
+    {
+        resultado = _Minutos2Milisegundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+
+    // Horas
+
+    if (unidad1_text == "Horas" && unidad2_text == "Segundos")
+    {
+        resultado = _Horas2Segundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Horas" && unidad2_text == "Minutos")
+    {
+        resultado = _Horas2Minutos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Horas" && unidad2_text == "Horas")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Horas" && unidad2_text == "Días")
+    {
+        resultado = _Horas2Dias(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Horas" && unidad2_text == "Semanas")
+    {
+        resultado = _Horas2Semanas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Horas" && unidad2_text == "Años")
+    {
+        resultado = _Horas2Anios(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Horas" && unidad2_text == "Milisegundos")
+    {
+        resultado = _Horas2Milisegundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    // Días
+    if (unidad1_text == "Días" && unidad2_text == "Segundos")
+    {
+        resultado = _Dias2Segundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Días" && unidad2_text == "Minutos")
+    {
+        resultado = _Dias2Minutos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Días" && unidad2_text == "Horas")
+    {
+        resultado = _Dias2Horas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Días" && unidad2_text == "Días")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Días" && unidad2_text == "Semanas")
+    {
+        resultado = _Dias2Semanas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Días" && unidad2_text == "Años")
+    {
+        resultado = _Dias2Anios(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Días" && unidad2_text == "Milisegundos")
+    {
+        resultado = _Dias2Milisegundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    // Semanas
+    if (unidad1_text == "Semanas" && unidad2_text == "Segundos")
+    {
+        resultado = _Semanas2Segundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Semanas" && unidad2_text == "Minutos")
+    {
+        resultado = _Semanas2Minutos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Semanas" && unidad2_text == "Horas")
+    {
+        resultado = _Semanas2Horas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Semanas" && unidad2_text == "Días")
+    {
+        resultado = _Semanas2Dias(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Semanas" && unidad2_text == "Semanas")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Semanas" && unidad2_text == "Años")
+    {
+        resultado = _Semanas2Anios(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Semanas" && unidad2_text == "Milisegundos")
+    {
+        resultado = _Semanas2Milisegundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    // Años
+    if (unidad1_text == "Años" && unidad2_text == "Segundos")
+    {
+        resultado = _Anios2Segundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Años" && unidad2_text == "Minutos")
+    {
+        resultado = _Anios2Minutos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Años" && unidad2_text == "Horas")
+    {
+        resultado = _Anios2Horas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Años" && unidad2_text == "Días")
+    {
+        resultado = _Anios2Dias(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Años" && unidad2_text == "Semanas")
+    {
+        resultado = _Anios2Semanas(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+    else if (unidad1_text == "Años" && unidad2_text == "Años")
+    {
+        ui->conversion_lbl->setText(QString::number(unidad1));
+    }
+
+    else if (unidad1_text == "Años" && unidad2_text == "Milisegundos")
+    {
+        resultado = _Anios2Milisegundos(unidad1);
+        ui->conversion_lbl->setText(QString::number(resultado));
+    }
 }
 
 

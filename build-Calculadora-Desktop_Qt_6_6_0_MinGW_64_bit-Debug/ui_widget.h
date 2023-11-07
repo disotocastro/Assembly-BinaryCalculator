@@ -215,7 +215,7 @@ public:
         label->setAutoFillBackground(true);
         frame = new QFrame(Widget);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(30, 150, 231, 41));
+        frame->setGeometry(QRect(30, 150, 241, 41));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Active, QPalette::Button, brush7);
@@ -294,7 +294,7 @@ public:
         valor_unidad1->setValue(0.000000000000000);
         frame_3 = new QFrame(Widget);
         frame_3->setObjectName("frame_3");
-        frame_3->setGeometry(QRect(30, 220, 231, 41));
+        frame_3->setGeometry(QRect(30, 220, 241, 41));
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette3.setBrush(QPalette::Active, QPalette::Button, brush7);
@@ -424,10 +424,10 @@ public:
         conversion_lbl->setFont(font3);
         cbx_unidad2 = new QComboBox(Widget);
         cbx_unidad2->setObjectName("cbx_unidad2");
-        cbx_unidad2->setGeometry(QRect(180, 230, 69, 22));
+        cbx_unidad2->setGeometry(QRect(170, 230, 91, 22));
         cbx_unidad1 = new QComboBox(Widget);
         cbx_unidad1->setObjectName("cbx_unidad1");
-        cbx_unidad1->setGeometry(QRect(180, 161, 69, 22));
+        cbx_unidad1->setGeometry(QRect(170, 161, 91, 22));
         frame_3->raise();
         frame->raise();
         label->raise();
