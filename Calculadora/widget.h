@@ -186,23 +186,126 @@ extern "C" double _Anios2Segundos(double unidad);
 extern "C" double _Anios2Milisegundos(double unidad);
 
 
+//Datos
+
+//Bit
+extern "C" double _Bit2Kilobytes(double unidad);
+extern "C" double _Bit2Bytes(double unidad);
+extern "C" double _Bit2Megabytes(double unidad);
+extern "C" double _Bit2Gigabytes(double unidad);
+extern "C" double _Bit2Terabytes(double unidad);
+extern "C" double _Bit2Kibibit(double unidad);
+extern "C" double _Bit2Mebibit(double unidad);
+extern "C" double _Bit2Gibibit(double unidad);
+extern "C" double _Bit2Tebibit(double unidad);
+
+
+//Bytes
+extern "C" double _Bytes2Kilobytes(double unidad);
+extern "C" double _Bytes2Bit(double unidad);
+extern "C" double _Bytes2Megabytes(double unidad);
+extern "C" double _Bytes2Gigabytes(double unidad);
+extern "C" double _Bytes2Terabytes(double unidad);
+extern "C" double _Bytes2Kibibit(double unidad);
+extern "C" double _Bytes2Mebibit(double unidad);
+extern "C" double _Bytes2Gibibit(double unidad);
+extern "C" double _Bytes2Tebibit(double unidad);
 
 
 
+//Kilobytes
+extern "C" double _Kilobytes2Bytes(double unidad);
+extern "C" double _Kilobytes2Bit(double unidad);
+extern "C" double _Kilobytes2Megabytes(double unidad);
+extern "C" double _Kilobytes2Gigabytes(double unidad);
+extern "C" double _Kilobytes2Terabytes(double unidad);
+extern "C" double _Kilobytes2Kibibit(double unidad);
+extern "C" double _Kilobytes2Mebibit(double unidad);
+extern "C" double _Kilobytes2Gibibit(double unidad);
+extern "C" double _Kilobytes2Tebibit(double unidad);
+
+//Megabytes
+extern "C" double _Megabytes2Bytes(double unidad);
+extern "C" double _Megabytes2Bit(double unidad);
+extern "C" double _Megabytes2Kilobytes(double unidad);
+extern "C" double _Megabytes2Gigabytes(double unidad);
+extern "C" double _Megabytes2Terabytes(double unidad);
+extern "C" double _Megabytes2Kibibit(double unidad);
+extern "C" double _Megabytes2Mebibit(double unidad);
+extern "C" double _Megabytes2Gibibit(double unidad);
+extern "C" double _Megabytes2Tebibit(double unidad);
+
+
+//Gigabytes
+extern "C" double _Gigabytes2Bytes(double unidad);
+extern "C" double _Gigabytes2Bit(double unidad);
+extern "C" double _Gigabytes2Kilobytes(double unidad);
+extern "C" double _Gigabytes2Megabytes(double unidad);
+extern "C" double _Gigabytes2Terabytes(double unidad);
+extern "C" double _Gigabytes2Kibibit(double unidad);
+extern "C" double _Gigabytes2Mebibit(double unidad);
+extern "C" double _Gigabytes2Gibibit(double unidad);
+extern "C" double _Gigabytes2Tebibit(double unidad);
 
 
 
+//Terabytes
+extern "C" double _Terabytes2Bytes(double unidad);
+extern "C" double _Terabytes2Bit(double unidad);
+extern "C" double _Terabytes2Kilobytes(double unidad);
+extern "C" double _Terabytes2Megabytes(double unidad);
+extern "C" double _Terabytes2Gigabytes(double unidad);
+extern "C" double _Terabytes2Kibibit(double unidad);
+extern "C" double _Terabytes2Mebibit(double unidad);
+extern "C" double _Terabytes2Gibibit(double unidad);
+extern "C" double _Terabytes2Tebibit(double unidad);
 
 
+//Kibibit
+extern "C" double _Kibibit2Bytes(double unidad);
+extern "C" double _Kibibit2Bit(double unidad);
+extern "C" double _Kibibit2Kilobytes(double unidad);
+extern "C" double _Kibibit2Megabytes(double unidad);
+extern "C" double _Kibibit2Gigabytes(double unidad);
+extern "C" double _Kibibit2Terabytes(double unidad);
+extern "C" double _Kibibit2Mebibit(double unidad);
+extern "C" double _Kibibit2Gibibit(double unidad);
+extern "C" double _Kibibit2Tebibit(double unidad);
 
 
+//Mebibit
+extern "C" double _Mebibit2Bytes(double unidad);
+extern "C" double _Mebibit2Bit(double unidad);
+extern "C" double _Mebibit2Kilobytes(double unidad);
+extern "C" double _Mebibit2Megabytes(double unidad);
+extern "C" double _Mebibit2Gigabytes(double unidad);
+extern "C" double _Mebibit2Terabytes(double unidad);
+extern "C" double _Mebibit2Kibibit(double unidad);
+extern "C" double _Mebibit2Gibibit(double unidad);
+extern "C" double _Mebibit2Tebibit(double unidad);
 
 
+//Gibibit
+extern "C" double _Gibibit2Bytes(double unidad);
+extern "C" double _Gibibit2Bit(double unidad);
+extern "C" double _Gibibit2Kilobytes(double unidad);
+extern "C" double _Gibibit2Megabytes(double unidad);
+extern "C" double _Gibibit2Gigabytes(double unidad);
+extern "C" double _Gibibit2Terabytes(double unidad);
+extern "C" double _Gibibit2Kibibit(double unidad);
+extern "C" double _Gibibit2Mebibit(double unidad);
+extern "C" double _Gibibit2Tebibit(double unidad);
 
-
-
-
-
+//Tebibit
+extern "C" double _Tebibit2Bytes(double unidad);
+extern "C" double _Tebibit2Bit(double unidad);
+extern "C" double _Tebibit2Kilobytes(double unidad);
+extern "C" double _Tebibit2Megabytes(double unidad);
+extern "C" double _Tebibit2Gigabytes(double unidad);
+extern "C" double _Tebibit2Terabytes(double unidad);
+extern "C" double _Tebibit2Kibibit(double unidad);
+extern "C" double _Tebibit2Mebibit(double unidad);
+extern "C" double _Tebibit2Gibibit(double unidad);
 
 
 

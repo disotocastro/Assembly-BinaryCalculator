@@ -2458,13 +2458,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>63</width>
+       <width>111</width>
        <height>21</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>12</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="text">

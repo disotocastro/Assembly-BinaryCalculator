@@ -169,6 +169,107 @@ global _Anios2Horas:function
 global _Anios2Semanas:function
 global _Anios2Milisegundos:function
 
+;Datos
+;Bit
+global _Bit2Kilobytes:function
+global _Bit2Bytes:function
+global _Bit2Megabytes:function
+global _Bit2Gigabytes:function
+global _Bit2Terabytes:function
+global _Bit2Kibibit:function
+global _Bit2Mebibit:function
+global _Bit2Gibibit:function
+global _Bit2Tebibit:function
+;Bytes
+global _Bytes2Kilobytes:function
+global _Bytes2Bit:function
+global _Bytes2Megabytes:function
+global _Bytes2Gigabytes:function
+global _Bytes2Terabytes:function
+global _Bytes2Kibibit:function
+global _Bytes2Mebibit:function
+global _Bytes2Gibibit:function
+global _Bytes2Tebibit:function
+;Kilobytes
+global _Kilobytes2Bytes:function
+global _Kilobytes2Bit:function
+global _Kilobytes2Megabytes:function
+global _Kilobytes2Gigabytes:function
+global _Kilobytes2Terabytes:function
+global _Kilobytes2Kibibit:function
+global _Kilobytes2Mebibit:function
+global _Kilobytes2Gibibit:function
+global _Kilobytes2Tebibit:function
+;Megabytes
+global _Megabytes2Bytes:function
+global _Megabytes2Bit:function
+global _Megabytes2Kilobytes:function
+global _Megabytes2Gigabytes:function
+global _Megabytes2Terabytes:function
+global _Megabytes2Kibibit:function
+global _Megabytes2Mebibit:function
+global _Megabytes2Gibibit:function
+global _Megabytes2Tebibit:function
+;Gigabytes
+global _Gigabytes2Bytes:function
+global _Gigabytes2Bit:function
+global _Gigabytes2Kilobytes:function
+global _Gigabytes2Megabytes:function
+global _Gigabytes2Terabytes:function
+global _Gigabytes2Kibibit:function
+global _Gigabytes2Mebibit:function
+global _Gigabytes2Gibibit:function
+global _Gigabytes2Tebibit:function
+;Terabytes
+global _Terabytes2Bytes:function
+global _Terabytes2Bit:function
+global _Terabytes2Kilobytes:function
+global _Terabytes2Megabytes:function
+global _Terabytes2Gigabytes:function
+global _Terabytes2Kibibit:function
+global _Terabytes2Mebibit:function
+global _Terabytes2Gibibit:function
+global _Terabytes2Tebibit:function
+;Kibibit
+global _Kibibit2Bytes:function
+global _Kibibit2Bit:function
+global _Kibibit2Kilobytes:function
+global _Kibibit2Megabytes:function
+global _Kibibit2Gigabytes:function
+global _Kibibit2Terabytes:function
+global _Kibibit2Mebibit:function
+global _Kibibit2Gibibit:function
+global _Kibibit2Tebibit:function
+;Mebibit
+global _Mebibit2Bytes:function
+global _Mebibit2Bit:function
+global _Mebibit2Kilobytes:function
+global _Mebibit2Megabytes:function
+global _Mebibit2Gigabytes:function
+global _Mebibit2Terabytes:function
+global _Mebibit2Kibibit:function
+global _Mebibit2Gibibit:function
+global _Mebibit2Tebibit:function
+;Gibibit
+global _Gibibit2Bytes:function
+global _Gibibit2Bit:function
+global _Gibibit2Kilobytes:function
+global _Gibibit2Megabytes:function
+global _Gibibit2Gigabytes:function
+global _Gibibit2Terabytes:function
+global _Gibibit2Kibibit:function
+global _Gibibit2Mebibit:function
+global _Gibibit2Tebibit:function
+;Tebibit
+global _Tebibit2Bytes:function
+global _Tebibit2Bit:function
+global _Tebibit2Kilobytes:function
+global _Tebibit2Megabytes:function
+global _Tebibit2Gigabytes:function
+global _Tebibit2Terabytes:function
+global _Tebibit2Kibibit:function
+global _Tebibit2Mebibit:function
+global _Tebibit2Gibibit:function
 
 ; Metros
 _metros2centimetros:
@@ -1252,3 +1353,676 @@ _Anios2Milisegundos:
     ; xmm0 = xmm0 * xmm1
     vmulsd xmm0, xmm0, xmm1
     ret
+
+
+
+;Datos
+;Bit
+_Bit2Kilobytes:
+    ; Carga el valor 0.000125 en xmm1
+    mov rax, 3f20624dd2f1a9fch ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Bytes:
+    ; Carga el valor 0.125 en xmm1
+    mov rax, 3fc0000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Megabytes:
+    ; Carga el valor 0.000000125 en xmm1
+    mov rax, 3e80c6f7a0b5ed8dh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Gigabytes:
+    ; Carga el valor 0,000000000125 en xmm1
+    mov rax, 3de12e0be826d695h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Terabytes:
+    ; Carga el valor 0,000000000000125 en xmm1
+    mov rax, 3d419799812dea11h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Kibibit:
+    ; Carga el valor 0,0009765625 en xmm1
+    mov rax, 3f50000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Mebibit:
+    ; Carga el valor 0,00000095367431640625 en xmm1
+    mov rax, 3eb0000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Gibibit:
+    ; Carga el valor0,000000000931322574 en xmm1
+    mov rax, 3e10000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bit2Tebibit:
+    ; Carga el valor 0,000000000000090949470177 en xmm1
+    mov rax, 3d70000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+;Bytes
+_Bytes2Kilobytes:
+    ; Carga el valor 0,001 en xmm1
+    mov rax, 3f50624dd2f1a9fch ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Bit:
+    ; Carga el valor 8 en xmm1
+    mov rax, 4020000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Megabytes:
+    ; Carga el valor 0,000001 en xmm1
+    mov rax, 3eb0c6f7a0b5ed8dh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Gigabytes:
+    ; Carga el valor 0,000000001 en xmm1
+    mov rax, 3e112e0be826d695h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Terabytes:
+    ; Carga el valor 0,000000000001 en xmm1
+    mov rax, 3d719799812dea11h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Kibibit:
+    ; Carga el valor 0.0078125 en xmm1
+    mov rax, 3f80000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Mebibit:
+    ; Carga el valor 0.000007627765 en xmm1
+    mov rax, 3edffe40187ea913h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Bytes2Gibibit:
+; Carga el valor 0.000007627765 en xmm1
+mov rax, 3edffe40187ea913h ; valor en hexadecimal para el double 31536000000
+movq xmm1, rax
+; xmm0 = xmm0 * xmm1
+vmulsd xmm0, xmm0, xmm1
+ret
+_Bytes2Tebibit:
+; Carga el valor 7.451564e-9 en xmm1
+mov rax, 3e40008a84af0c8bh ; valor en hexadecimal para el double 31536000000
+movq xmm1, rax
+; xmm0 = xmm0 * xmm1
+vmulsd xmm0, xmm0, xmm1
+ret
+
+;Kilobytes
+_Kilobytes2Bytes:
+    ; Carga el valor 1000 en xmm1
+    mov rax, 408f400000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Bit:
+    ; Carga el valor 8000 en xmm1
+    mov rax, 40bf400000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Megabytes:
+    ; Carga el valor 0.001 en xmm1
+    mov rax, 3f50624dd2f1a9fch ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Gigabytes:
+    ; Carga el valor 0.000001 en xmm1
+    mov rax, 3eb0c6f7a0b5ed8dh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Terabytes:
+    ; Carga el valor 0,000000001 en xmm1
+    mov rax, 3e112e0be826d695h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Kibibit:
+    ; Carga el valor 7,8125 en xmm1
+    mov rax, 401c000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Mebibit:
+    ; Carga el valor 131,1 en xmm1
+    mov rax, 4060633333333333h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Gibibit:
+    ; Carga el valor 0.0000007452 en xmm1
+    mov rax, 3ea90138214a20b7h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Kilobytes2Tebibit:
+    ; Carga el valor 0.000000000000072780 en xmm1
+    mov rax, 3da001294691bc59h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+;Megabytes
+_Megabytes2Bytes:
+    ; Carga el valor 1000000 en xmm1
+    mov rax, 412e848000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Bit:
+    ; Carga el valor 8000000 en xmm1
+    mov rax, 415e848000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Kilobytes:
+    ; Carga el valor 1000 en xmm1
+    mov rax, 408f400000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Gigabytes:
+    ; Carga el valor 0,001 en xmm1
+    mov rax, 3f50624dd2f1a9fch ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Terabytes:
+    ; Carga el valor 0.000001 en xmm1
+    mov rax, 3eb0c6f7a0b5ed8dh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Kibibit:
+    ; Carga el valor 7813 en xmm1
+    mov rax, 40be850000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Mebibit:
+    ; Carga el valor 7,629 en xmm1
+    mov rax, 401e84189374bc6ah ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Gibibit:
+    ; Carga el valor 0,00745156482 en xmm1
+    mov rax, 3f7e8588334b7719h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Megabytes2Tebibit:
+; Carga el valor 0.000007278020 en xmm1
+mov rax, 3ede86b70221a807h ; valor en hexadecimal para el double 31536000000
+movq xmm1, rax
+; xmm0 = xmm0 * xmm1
+vmulsd xmm0, xmm0, xmm1
+ret
+
+;Gigabytes
+_Gigabytes2Bytes:
+    ; Carga el valor 1000000000 en xmm1
+    mov rax, 41cdcd6500000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Bit:
+    ; Carga el valor 8000000000 en xmm1
+    mov rax, 41fdcd6500000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Kilobytes:
+    ; Carga el valor 1000000 en xmm1
+    mov rax, 412e848000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Megabytes:
+    ; Carga el valor 1000 en xmm1
+    mov rax, 408f400000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Terabytes:
+    ; Carga el valor 0,001 en xmm1
+    mov rax, 3f50624dd2f1a9fch ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Kibibit:
+    ; Carga el valor 7813000000 en xmm1
+    mov rax, 41fd1b0eb4000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Mebibit:
+    ; Carga el valor 7629 en xmm1
+    mov rax, 40bdcd0000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Gibibit:
+    ; Carga el valor 7.451 en xmm1
+    mov rax, 401dcdd2f1a9fbe7h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gigabytes2Tebibit:
+; Carga el valor 0,00727802037845 en xmm1
+mov rax, 3f7dcf8eb814be4ch ; valor en hexadecimal para el double 31536000000
+movq xmm1, rax
+; xmm0 = xmm0 * xmm1
+vmulsd xmm0, xmm0, xmm1
+ret
+
+;Terabytes
+_Terabytes2Bytes:
+    ; Carga el valor 1000000000000 en xmm1
+    mov rax, 426d1a94a2000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Bit:
+    ; Carga el valor 8000000000000 en xmm1
+    mov rax, 429d1a94a2000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Kilobytes:
+    ; Carga el valor 1000000000 en xmm1
+    mov rax, 41cdcd6500000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Megabytes:
+    ; Carga el valor 1000000 en xmm1
+    mov rax, 412e848000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Gigabytes:
+    ; Carga el valor 1000 en xmm1
+    mov rax, 408f400000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Kibibit:
+    ; Carga el valor 7813000000000 en xmm1
+    mov rax, 429c6c6c5bc80000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Mebibit:
+    ; Carga el valor 7629000000 en xmm1
+    mov rax, 41fc6b94d4000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Gibibit:
+    ; Carga el valor 7451 en xmm1
+    mov rax, 40bd1b0000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Terabytes2Tebibit:
+    ; Carga el valor 7,276 en xmm1
+    mov rax, 401d1a9fbe76c8b4h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+;Kibibit
+_Kibibit2Bytes:
+    ; Carga el valor 128 en xmm1
+    mov rax, 4060000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Kibibit2Bit:
+    ; Carga el valor 1024 en xmm1
+    mov rax, 4090000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Kibibit2Kilobytes:
+    ; Carga el valor 0,128008192524321 en xmm1
+    mov rax, 3fc062928b214a97h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Kibibit2Megabytes:
+    ; Carga el valor 0.0001279918085242 en xmm1
+    mov rax, 3f20c6b1437709ddh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Kibibit2Gigabytes:
+    ; Carga el valor 1.2799180852425444e-13 en xmm1
+    mov rax, 3d4203641154124dh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+_Kibibit2Terabytes:
+    ; Carga el valor 1.2799180852425444e-13 en xmm1
+    mov rax, 3d4203641154124dh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+_Kibibit2Mebibit:
+    ; Carga el valor 0,0009765625 en xmm1
+    mov rax, 3f50000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Kibibit2Gibibit:
+    ; Carga el valor 0,00000095367431640625 en xmm1
+    mov rax, 3eb0000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Kibibit2Tebibit:
+; Carga el valor 0,00000000093132257461 en xmm1
+mov rax, 3e0fffffffff3107h ; valor en hexadecimal para el double 31536000000
+movq xmm1, rax
+; xmm0 = xmm0 * xmm1
+vmulsd xmm0, xmm0, xmm1
+ret
+
+
+;Mebibit
+_Mebibit2Bytes:
+    ; Carga el valor 131100 en xmm1
+    mov rax, 410000e000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Bit:
+    ; Carga el valor 1048576 en xmm1
+    mov rax, 4130000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Kilobytes:
+    ; Carga el valor 131,1 en xmm1
+    mov rax, 4060633333333333h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Megabytes:
+    ; Carga el valor 0,13107877834578 en xmm1
+    mov rax, 3fc0c7307d18edd5h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Gigabytes:
+    ; Carga el valor 0,13107877834578 en xmm1
+    mov rax, 3fc0c7307d18edd5h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Terabytes:
+    ; Carga el valor 0,000000953674 en xmm1
+    mov rax, 3eafffff4de10dc4h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Kibibit:
+    ; Carga el valor 1024 en xmm1
+    mov rax, 4090000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Gibibit:
+    ; Carga el valor 0,0009765625 en xmm1
+    mov rax, 3f50000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+_Mebibit2Tebibit:
+    ; Carga el valor 0,00000095367431 en xmm1
+    mov rax, 3eaffffffc64c317h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+
+;Gibibit
+_Gibibit2Bytes:
+    ; Carga el valor 134200000000 en xmm1
+    mov rax, 423f3ef17e000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Bit:
+    ; Carga el valor 1073741824 en xmm1
+    mov rax, 41d0000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Kilobytes:
+    ; Carga el valor 134200 en xmm1
+    mov rax, 410061c000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Megabytes:
+    ; Carga el valor 134,2 en xmm1
+    mov rax, 4060c66666666666h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Gigabytes:
+    ; Carga el valor 7,451 en xmm1
+    mov rax, 401dcdd2f1a9fbe7h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Terabytes:
+    ; Carga el valor 0.00013421017313112335 en xmm1
+    mov rax, 3f2197589bd8d505h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Kibibit:
+    ; Carga el valor 1048576 en xmm1
+    mov rax, 4130000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Mebibit:
+    ; Carga el valor 1024 en xmm1
+    mov rax, 4090000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Gibibit2Tebibit:
+    ; Carga el valor 0,0009765625 en xmm1
+    mov rax, 3f50000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+
+;Tebibit
+_Tebibit2Bytes:
+    ; Carga el valor 1099511627777 en xmm1
+    mov rax, 4270000000001000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Bit:
+    ; Carga el valor 137400000000000 en xmm1
+    mov rax, 42df3dbb8c4c0000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Kilobytes:
+    ; Carga el valor 137400000000 en xmm1
+    mov rax, 423ffdad9e000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Megabytes:
+    ; Carga el valor 137400 en xmm1
+    mov rax, 4100c5c000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Gigabytes:
+    ; Carga el valor 137,4 en xmm1
+    mov rax, 40612ccccccccccdh ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Terabytes:
+    ; Carga el valor 0,1374381528312259 en xmm1
+    mov rax, 3fc19792c9d0fe72h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Kibibit:
+    ; Carga el valor 1073741824 en xmm1
+    mov rax, 41d0000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Mebibit:
+    ; Carga el valor 1048576 en xmm1
+    mov rax, 4130000000000000h ; valor en hexadecimal para el double 31536000000
+    movq xmm1, rax
+    ; xmm0 = xmm0 * xmm1
+    vmulsd xmm0, xmm0, xmm1
+    ret
+_Tebibit2Gibibit:
+; Carga el valor 1024 en xmm1
+mov rax, 4090000000000000h ; valor en hexadecimal para el double 31536000000
+movq xmm1, rax
+; xmm0 = xmm0 * xmm1
+vmulsd xmm0, xmm0, xmm1
+ret

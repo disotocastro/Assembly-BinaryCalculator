@@ -1138,6 +1138,523 @@ void Widget::on_valor_unidad1_valueChanged()
         resultado = _Anios2Milisegundos(unidad1);
         ui->conversion_lbl->setText(QString::number(resultado));
     }
+
+
+
+
+    //Datos
+    //Bit
+
+    else if (unidad1_text == "Bit" && unidad2_text == "Bit")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+    else if (unidad1_text == "Bit" && unidad2_text == "Kilobytes")
+    {
+       resultado = _Bit2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+    }
+   else if (unidad1_text == "Bit" && unidad2_text == "Bytes")
+   {
+       resultado = _Bit2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+    else if (unidad1_text == "Bit" && unidad2_text == "Megabytes")
+    {
+       resultado = _Bit2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+    }
+   else if (unidad1_text == "Bit" && unidad2_text == "Gigabytes")
+   {
+       resultado = _Bit2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+    else if (unidad1_text == "Bit" && unidad2_text == "Terabytes")
+    {
+       resultado = _Bit2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+    }
+   else if (unidad1_text == "Bit" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Bit2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+    else if (unidad1_text == "Bit" && unidad2_text == "Mebibit")
+    {
+       resultado =  _Bit2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+    }
+   else if (unidad1_text == "Bit" && unidad2_text == "Gibibit")
+   {
+       resultado = _Bit2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+    else if (unidad1_text == "Bit" && unidad2_text == "Tebibit")
+    {
+       resultado =  _Bit2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+    }
+
+
+    //Bytes
+   else if (unidad1_text == "Bytes" && unidad2_text == "Bytes")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Bytes2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Bit")
+   {
+       resultado =  _Bytes2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Bytes2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Bytes2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Terabytes")
+   {
+       resultado = _Bytes2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Kibibit")
+   {
+       resultado = _Bytes2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Bytes2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Bytes2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bytes" && unidad2_text == "Tebibit")
+   {
+       resultado =  _Bytes2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+   //Kilobytes
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Kilobytes")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Bit")
+   {
+       resultado =  _Kilobytes2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Bytes")
+   {
+       resultado =  _Kilobytes2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Megabytes")
+   {
+       resultado = _Kilobytes2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Kilobytes2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Kilobytes2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Kilobytes2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Kilobytes2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Kilobytes2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kilobytes" && unidad2_text == "Tebibit")
+   {
+       resultado =  _Kilobytes2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+   //Megabytes
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Megabytes")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Megabytes2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Bytes")
+   {
+       resultado =  _Megabytes2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Bit")
+   {
+       resultado =  _Megabytes2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Gigabytes")
+   {
+       resultado = _Megabytes2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Bit" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Megabytes2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Megabytes2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Megabytes2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Megabytes2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Megabytes" && unidad2_text == "Tebibit")
+   {
+       resultado =  _Megabytes2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+   // Gigabytes
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Gigabytes")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Gigabytes2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Bytes")
+   {
+       resultado =  _Gigabytes2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Gigabytes2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Bit")
+   {
+       resultado =  _Gigabytes2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Gigabytes2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Gigabytes2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Gigabytes2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Gigabytes2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gigabytes" && unidad2_text == "Tebibit")
+   {
+       resultado =  _Gigabytes2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+   //Terabyte
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Terabytes")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Terabytes2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Bytes")
+   {
+       resultado =  _Terabytes2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Terabytes2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Terabytes2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Bit")
+   {
+       resultado =  _Terabytes2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Terabytes2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Terabytes2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Terabytes2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Terabytes" && unidad2_text == "Tebibit")
+   {
+       resultado = _Terabytes2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+   //Kibibit
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Kibibit")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Kibibit2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Bytes")
+   {
+       resultado =  _Kibibit2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Kibibit2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Kibibit2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Kibibit2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Bit")
+   {
+       resultado =  _Kibibit2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Kibibit2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Kibibit2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Kibibit" && unidad2_text == "Tebibit")
+   {
+       resultado =  _Kibibit2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+
+   //Mebibit
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Mebibit")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Mebibit2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Bytes")
+   {
+       resultado =  _Mebibit2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Mebibit2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Mebibit2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Mebibit2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Mebibit2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Bit")
+   {
+       resultado =  _Mebibit2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Mebibit2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Mebibit" && unidad2_text == "Tebibit")
+   {
+       resultado =  _Mebibit2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   //Gibibit
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Gibibit")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Gibibit2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Bytes")
+   {
+       resultado =  _Gibibit2Bytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Gibibit2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Gibibit2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Gibibit2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Kibibit")
+   {
+       resultado = _Gibibit2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Gibibit2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Bit")
+   {
+       resultado =  _Gibibit2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Gibibit" && unidad2_text == "Tebibit")
+   {
+       resultado = _Gibibit2Tebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   //Tebibit
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Bit")
+   {
+       ui->conversion_lbl->setText(QString::number(unidad1));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Kilobytes")
+   {
+       resultado =  _Tebibit2Kilobytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Bytes")
+   {
+       resultado =  _Tebibit2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Megabytes")
+   {
+       resultado =  _Tebibit2Megabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Gigabytes")
+   {
+       resultado =  _Tebibit2Gigabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Terabytes")
+   {
+       resultado =  _Tebibit2Terabytes(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Kibibit")
+   {
+       resultado =  _Tebibit2Kibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Mebibit")
+   {
+       resultado =  _Tebibit2Mebibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Gibibit")
+   {
+       resultado =  _Tebibit2Gibibit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+   else if (unidad1_text == "Tebibit" && unidad2_text == "Bit")
+   {
+       resultado =  _Tebibit2Bit(unidad1);
+       ui->conversion_lbl->setText(QString::number(resultado));
+   }
+
+
 }
 
 
